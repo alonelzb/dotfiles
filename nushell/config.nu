@@ -531,3 +531,6 @@ alias l = exa
 
 source ~/.zoxide.nu
 source ~/.cache/starship/init.nu
+
+
+# new
