@@ -2,7 +2,9 @@ require("nvim-tree").setup({
 	hijack_cursor = true,
 	view = {
 		-- 自适应
+
 		adaptive_size = true,
+
 		-- width = 30,
 		mappings = {
 			list = {

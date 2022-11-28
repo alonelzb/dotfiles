@@ -277,7 +277,11 @@ return packer.startup(function(use)
 	-- Git
 	use({
 		"lewis6991/gitsigns.nvim",
+
 		event = "BufRead",
+		config = function()
+			require("gitsigns").setup()
+		end,
 	})
 
 	-- 快速移动,esaymotion
