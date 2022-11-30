@@ -11,7 +11,7 @@ procps
 snippets
 wslu
 
-starship.toml
+#starship.toml
 
 *.pyc
 
