@@ -13,10 +13,9 @@ local servers = {
 	"bashls",
 	"yamlls",
 	"jsonls",
-	"pyright"
+	"pyright",
 }
 -- 通用服务器配置
-}
 -- html
 -- npm i -g vscode-langservers-extracted
 -- include
