@@ -53,9 +53,10 @@ style = "bg:#ff9248 fg:#193549"
 format = '([\[$all_status$ahead_behind\]]($style))'
 
 [character]
-success_symbol = "[➜](bold green)"
+# ➜
+success_symbol = "[🔥](bold green)"
 # success_symbol = "[\\$](bold green)"
-error_symbol = "[×](bold red)"
+error_symbol = "[❌](bold red)"
 format = '$symbol '
 
 [cmd_duration]
