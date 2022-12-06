@@ -2,3 +2,22 @@ htop
 clash
 procps/
 plugin
+
+# nushell
+nushell/history.txt
+
+# nvim
+plugin
+
+
+caddy
+coc
+procps
+snippets
+wslu
+
+#starship.toml
+
+*.pyc
+
+.luarc.json

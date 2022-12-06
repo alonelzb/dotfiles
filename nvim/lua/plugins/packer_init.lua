@@ -113,13 +113,13 @@ return packer.startup(function(use)
 		end,
 	})
 
-	--[[ use({
+	use({
 		"ahmedkhalf/project.nvim",
 		event = "BufRead",
 		config = function()
 			require("plugins.project")
 		end,
-	}) ]]
+	})
 
     use({
   "folke/noice.nvim",
@@ -164,7 +164,7 @@ return packer.startup(function(use)
 	-- cmp plugins
 	use({
 		"hrsh7th/nvim-cmp",
-	after = "friendly-snippets",
+		after = "friendly-snippets",
 		config = function()
 			require("plugins.nvim_cmp")
 		end,
