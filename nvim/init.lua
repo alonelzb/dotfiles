@@ -1,0 +1,6 @@
+-- require("impatient")
+require("base.options")
+require("base.keymaps")
+require("base.autocommands")
+require("plugins.packer_init")
+require("base.colorscheme")
