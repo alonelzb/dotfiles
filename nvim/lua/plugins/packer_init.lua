@@ -121,17 +121,17 @@ return packer.startup(function(use)
 		end,
 	})
 
-    use({
-  "folke/noice.nvim",
-  config = function()
-    require("noice").setup({
-        -- add any options here
-    })
-  end,
-  requires = {
-    "MunifTanjim/nui.nvim",
-    }
-})
+	use({
+		"folke/noice.nvim",
+		config = function()
+			require("noice").setup({
+				-- add any options here
+			})
+		end,
+		requires = {
+			"MunifTanjim/nui.nvim",
+		},
+	})
 
 	use({
 		"lukas-reineke/indent-blankline.nvim",
@@ -326,7 +326,6 @@ return packer.startup(function(use)
 			require("plugins.lspsaga")
 		end,
 	})
-
 
 	use({
 		"rcarriga/nvim-notify",

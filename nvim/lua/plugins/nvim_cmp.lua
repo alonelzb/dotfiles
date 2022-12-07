@@ -33,6 +33,7 @@ local kind_icons = {
 }
 
 cmp.setup({
+	completion = { completeopt = "menu,menuone,noinsert" },
 	view = {
 		-- entries = "custom" -- can be "custom", "wildmenu" or "native"
 		entries = { name = "custom", selection_order = "near_cursor" },

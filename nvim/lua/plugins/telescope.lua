@@ -36,4 +36,3 @@ telescope.setup({
 		},
 	},
 })
-vim.notify("loaded telescope")
