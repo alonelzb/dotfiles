@@ -76,4 +76,4 @@ vim.opt.shortmess:append("c") -- hide all the completion messages, e.g. "-- XXX 
 vim.opt.whichwrap:append("<,>,[,],h,l") -- keys allowed to move to the previous/next line when the beginning/end of line is reached
 vim.opt.iskeyword:append("-") -- treats words with `-` as single words
 vim.opt.list = true
-vim.opt.listchars = "tab:>--"
+vim.opt.listchars = "tab:-->"

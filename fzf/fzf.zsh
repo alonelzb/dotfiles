@@ -21,8 +21,9 @@ export FZF_CTRL_T_OPTS="--select-1 --exit-0"
 export FZF_ALT_C_COMMAND="fd --type d --hidden"
 
 # export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+# --exact 
 export FZF_DEFAULT_OPTS='
---height 60% --layout=reverse --border --exact --info=inline
+--height 60% --layout=reverse --border --info=inline
 
 --color=dark
 --color=fg:-1,bg:-1,hl:#5fff87,fg+:cyan,bg+:99,hl+:#ffaf5f

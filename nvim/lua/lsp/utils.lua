@@ -128,17 +128,9 @@ function M.on_attach(client, bufnr)
 	-- 		vim.diagnostic.open_float(nil, opts)
 	-- 	end,
 	-- })
-	-- 禁用格式化功能，交给专门插件null-ls处理
-	-- client.resolved_capabilities.document_formatting = false
-	-- client.resolved_capabilities.document_range_formatting = false
-	-- if client.name == 'tsserver' then
-	--     client.server_capabilities.documentFormattingProvider = false
-	-- end
 
 	lsp_keymaps(bufnr)
 	hi_undercursor(client, bufnr)
 end
-
--- M.capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 return M

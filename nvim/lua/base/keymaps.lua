@@ -51,32 +51,13 @@ keymap("v", ">", ">gv", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope
-keymap("n", "<C-p>", ":Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>", opts)
-keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
+-- keymap("n", "<C-p>", ":Telescope find_files<CR>", opts)
+keymap("n", "<C-p>", ":Telescope find_files find_command=fd,-t,f,-H,-I<CR>", opts)
+-- keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 keymap("n", "<leader>fr", ":Telescope oldfiles<CR>", opts)
-
--- Git
-keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
-
--- Comment
--- keymap("n", "<C-_>", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
--- keymap("x", "<C-_>", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>')
--- keymap("x", "<C-_>", 'gcc')
--- keymap("n", "<C-_>", 'gcc')
-
--- -- DAP
--- keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
--- keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", opts)
--- keymap("n", "<leader>di", "<cmd>lua require'dap'.step_into()<cr>", opts)
--- keymap("n", "<leader>do", "<cmd>lua require'dap'.step_over()<cr>", opts)
--- keymap("n", "<leader>dO", "<cmd>lua require'dap'.step_out()<cr>", opts)
--- keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", opts)
--- keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
--- keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
--- keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
 keymap("n", "cw", "ciw", opts)
 keymap("n", "dw", "diw", opts)
@@ -106,6 +87,9 @@ keymap("n", "f", ":HopChar1<CR>", opts)
 keymap("n", "t", ":HopChar2<CR>", opts)
 keymap("n", "F", ":HopChar1CurrentLine<CR>", opts)
 
+-- format
+-- keymap("n", "<Leader>fm", ":lua vim.lsp.buf.format()<CR>", opts)
+-- vim.keymap.set("n", "<leader>fm", "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", { silent = true })
 -- vim.cmd([[
 --     snoremap <silent> <C-j> <cmd>lua require('luasnip').jump(1)<Cr>
 --     snoremap <silent> <C-k> <cmd>lua require('luasnip').jump(-1)<Cr>
