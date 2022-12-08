@@ -21,4 +21,4 @@ wslu
 *.pyc
 
 .luarc.json
-formatter
+formatter.lua
