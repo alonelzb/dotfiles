@@ -5,15 +5,12 @@
 -- local colorscheme = "gruvbox"
 -- local colorscheme = "monokai"
 
--- require('base.colors.dracula-nvim')
+-- require("base.colors.dracula-nvim")
 -- require("base.colors.gruvbox")
 -- require("base.colors.kanagawa")
 -- require("base.colors.material")
 -- require("base.colors.catppuccin")
 require("base.colors.zephyr")
-
--- vim.cmd("colorscheme dracula")
--- vim.cmd("colorscheme zephyr")
 
 vim.cmd([[
   hi Normal guibg=None
