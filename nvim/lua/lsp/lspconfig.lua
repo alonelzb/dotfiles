@@ -14,6 +14,7 @@ local servers = {
     "yamlls",
     "jsonls",
     "pyright",
+    -- "gopls",
     -- "denols"
     -- "tsserver"
 }
@@ -36,8 +37,8 @@ for _, server in pairs(servers) do
 end
 
 -- lua
-lspconfig.sumneko_lua.setup({
-    settings = require("lsp.servers.sumneko_lua"),
+lspconfig.lua_ls.setup({
+    settings = require("lsp.servers.lua_ls"),
     capabilities = capabilities,
     on_attach = utils.on_attach,
 })

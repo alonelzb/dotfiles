@@ -1,12 +1,13 @@
 local M = {}
 
 M.servers = {
-    "sumneko_lua",
+    -- "sumneko_lua",
+    "lua_ls",
     "pyright",
     "volar",
     "emmet_ls",
     "yamlls",
-    -- 'gopls',
+    -- "gopls",
     -- 'tsserver'
 }
 
