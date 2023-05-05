@@ -24,6 +24,7 @@ alias httpb='http -b'
 
 export PATH=/usr/local/python3/bin:$PATH
 export PATH=/usr/local/nvim-linux64/bin:$PATH
+export PATH=/usr/local/go/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 
