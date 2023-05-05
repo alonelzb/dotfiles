@@ -142,3 +142,4 @@ eval "`fnm env`"
 
 # fzf
 [ -f ~/.config/fzf/fzf.zsh ] && source ~/.config/fzf/fzf.zsh
+###3333333

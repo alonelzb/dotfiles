@@ -1,16 +1,17 @@
-return {
-    "windwp/nvim-autopairs",
-    event = "InsertEnter",
-    config = function()
-        require("nvim-autopairs").setup({
-            check_ts = true, -- treesitter integration
+-- Setup nvim-cmp.
+local status_ok, npairs = pcall(require, "nvim-autopairs")
+if not status_ok then
+	return
+end
+
+npairs.setup({
+	check_ts = true, -- treesitter integration
 	disable_filetype = { "TelescopePrompt" },
 	ts_config = {
 		lua = { "string", "source" },
 		javascript = { "string", "template_string" },
 		java = false,
 	},
-
 
 	fast_wrap = {
 		map = "<M-e>",
@@ -23,7 +24,8 @@ return {
 		highlight = "PmenuSel",
 		highlight_grey = "LineNr",
 	},
+})
 
-        })
-    end
-}
+local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+local cmp = require("cmp")
+cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({}))

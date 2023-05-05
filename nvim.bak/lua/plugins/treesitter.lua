@@ -1,19 +1,8 @@
-return {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    event = { "BufReadPost", "BufNewFile" },
-    dependencies = {
-        "JoosepAlviste/nvim-ts-context-commentstring",
-        "p00f/nvim-ts-rainbow",
-        "windwp/nvim-ts-autotag",
-        "yioneko/nvim-yati",
-        "nvim-treesitter/nvim-treesitter-context",
-        "nvim-treesitter/playground",
-    },
+-- require("nvim-treesitter")
+local configs = require("nvim-treesitter.configs")
 
-    config = function() 
-        require("nvim-treesitter.configs").setup({
-            ensure_installed = {
+configs.setup({
+	ensure_installed = {
 		"lua",
 		"markdown",
 		"markdown_inline",
@@ -22,11 +11,9 @@ return {
 		"html",
 		"css",
 		"javascript",
-
 		"typescript",
 		"vue",
 		"regex",
-
 		"vim",
 	}, -- put the language you want in this array
 	ignore_install = { "" }, -- List of parsers to ignore installing
@@ -83,11 +70,9 @@ return {
 			selection_modes = {
 				["@parameter.outer"] = "v", -- charwise
 				["@function.outer"] = "V", -- linewise
-
 				["@class.outer"] = "<c-v>", -- blockwise
 			},
 			-- If you set this to `true` (default is `false`) then any textobject is
-
 			-- extended to include preceding or succeeding whitespace. Succeeding
 			-- whitespace has priority in order to act similarly to eg the built-in
 			-- `ap`.
@@ -115,7 +100,4 @@ return {
 			},
 		},
 	},
-        })
-    end
-
-}
+})

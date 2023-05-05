@@ -1,9 +1,4 @@
-return {
-            "jose-elias-alvarez/null-ls.nvim",
-        -- after = "nvim-cmp",
-        event = "BufRead",
-    config = function()
-        local null_ls = require("null-ls")
+local null_ls = require("null-ls")
 
 local formatting = null_ls.builtins.formatting
 
@@ -15,7 +10,6 @@ local lsp_formatting = function(bufnr)
         end,
         bufnr = bufnr,
     })
-
 end
 -- if you want to set up formatting on save, you can use this as a callback
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
@@ -39,8 +33,8 @@ local on_attach = function(client, bufnr)
     end
 end
 
-        null_ls.setup({
-             debug = false,
+null_ls.setup({
+    debug = false,
     sources = {
         formatting.prettierd.with({
             extra_filetypes = { "toml" },
@@ -60,7 +54,4 @@ end
         formatting.black,
     },
     on_attach = on_attach,
-
-        })
-    end
-}
+})

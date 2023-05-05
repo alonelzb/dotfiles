@@ -1,6 +1,6 @@
--- require("impatient")
-require("base.options")
-require("base.keymaps")
-require("base.autocommands")
-require("plugins.packer_init")
-require("base.colorscheme")
+require('config.options')
+require('config.keymaps')
+require('config.autocmds')
+require('config.lazy')
+require('config.ui')
+
