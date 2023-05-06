@@ -6,9 +6,12 @@
 local del = vim.keymap.del
 local set = vim.keymap.set
 
+set("n", "<leader>h", "<Cmd>BufferLineCyclePrev<CR>", { desc = "Prev Buffer" })
+set("n", "<leader>l", "<Cmd>BufferLineCyclePrev<CR>", { desc = "Next Buffer" })
+
 del("n", "H")
 del("n", "L")
-del("n", "<leader>l")
+-- del("n", "<leader>l")
 
 set("i", "jk", "<ESC>")
 set("n", "cw", "ciw")

@@ -3,11 +3,7 @@ return {
 	{ "ellisonleao/gruvbox.nvim", lazy = true },
 
 	-- catppuccin
-	{
-		"catppuccin/nvim",
-		lazy = true,
-		name = "catppuccin",
-	},
+	{ "catppuccin/nvim", lazy = true, name = "catppuccin" },
 
 	-- dracula
 	{
@@ -36,11 +32,43 @@ return {
 		"glepnir/zephyr-nvim",
 		lazy = true,
 	},
+
+	-- onedarkpro
+	{
+		"olimorris/onedarkpro.nvim",
+		lazy = true,
+		config = function()
+			require("onedarkpro").setup({
+				options = {
+					transparency = true, -- Use a transparent background?
+				},
+			})
+		end,
+	},
+
+	-- monokai
+	{
+		"tanvirtin/monokai.nvim",
+		lazy = true,
+		-- config = function()
+		-- require('monokai').setup {}
+		-- require("monokai").setup({ palette = require("monokai").pro })
+		-- require("monokai").setup({ palette = require("monokai").soda })
+		-- require("monokai").setup({ palette = require("monokai").ristretto })
+		-- end,
+	},
+	{
+		"hardhackerlabs/theme-vim",
+		lazy = true,
+		name = "hardhacker",
+	},
+
 	-- Configure LazyVim to load gruvbox
 	{
 		"LazyVim/LazyVim",
 		opts = {
-			colorscheme = "zephyr",
+			-- gruvbox catppuccin dracula kanagawa zephyr onedarkpro monokai
+			colorscheme = "dracula",
 		},
 	},
 }

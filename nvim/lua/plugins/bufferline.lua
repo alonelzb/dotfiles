@@ -1,7 +1,8 @@
-return {
-	"akinsho/bufferline.nvim",
-	keys = {
-		{ "<leader>h", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev Buffer" },
-		{ "<leader>l", "<Cmd>BufferLineCycleNext<CR>", desc = "Next Buffer" },
-	},
-}
+return {}
+-- return {
+-- 	"akinsho/bufferline.nvim",
+-- 	keys = {
+-- 		{ "<leader>j", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev Buffer" },
+-- 		{ "<leader>k", "<Cmd>BufferLineCycleNext<CR>", desc = "Next Buffer" },
+-- 	},
+-- }

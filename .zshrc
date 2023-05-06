@@ -4,6 +4,7 @@ alias j='z'
 # lsd
 alias ls='lsd'
 alias ll='lsd -l'
+alias l='lsd -l'
 alias la='lsd -a'
 alias lla='lsd -la'
 alias pip='pip3'
@@ -20,8 +21,7 @@ alias clash='~/.config/clash/clash-linux &'
 alias httpd='http -d'
 alias httpb='http -b'
 
-
-
+# 环境变量
 export PATH=/usr/local/python3/bin:$PATH
 export PATH=/usr/local/nvim-linux64/bin:$PATH
 export PATH=/usr/local/go/bin:$PATH
@@ -143,4 +143,3 @@ eval "`fnm env`"
 
 # fzf
 [ -f ~/.config/fzf/fzf.zsh ] && source ~/.config/fzf/fzf.zsh
-###3333333
