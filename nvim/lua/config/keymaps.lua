@@ -1,69 +1,24 @@
--- Shorten function name
-local keymap = vim.keymap.set
--- Silent keymap option
-local opts = { silent = true }
+-- Keymaps are automatically loaded on the VeryLazy event
+-- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
+-- Add any additional keymaps here
+-- map("n", "<leader>l", "<cmd>:Lazy<cr>", { desc = "Lazy" })
 
--- Modes
---   normal_mode = "n",
---   insert_mode = "i",
---   visual_mode = "v",
---   visual_block_mode = "x",
---   term_mode = "t",
---   command_mode = "c",
+local del = vim.keymap.del
+local set = vim.keymap.set
 
--- Normal --
--- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+del("n", "H")
+del("n", "L")
+del("n", "<leader>l")
 
--- Resize with arrows
-keymap("n", "<C-Up>", ":resize -2<CR>", opts)
-keymap("n", "<C-Down>", ":resize +2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
-
--- Navigate buffers
--- keymap("n", "<S-l>", ":bnext<CR>", opts)
--- keymap("n", "<S-h>", ":bprevious<CR>", opts)
-
--- Clear highlights
-keymap("n", "<ESC>", "<cmd>nohlsearch<CR>", opts)
-
--- Better paste
-keymap("v", "p", '"_dP', opts)
-
--- Insert --
--- Press jk fast to enter
-keymap("i", "jk", "<ESC>", opts)
-
--- Visual --
--- Stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
-
-
-keymap("n", "cw", "ciw", opts)
-keymap("n", "dw", "diw", opts)
--- Buffers options
-keymap("n", "<Leader>x", "<cmd>Bdelete<CR>", opts)
-keymap("n", "<Leader>j", ":bn<CR>", opts)
-keymap("n", "<Leader>k", ":bp<CR>", opts)
-keymap("n", "<Leader>bf", ":bf<CR>", opts)
-keymap("n", "<Leader>bl", ":bl<CR>", opts)
-
-keymap("n", "<C-s>", "<cmd>w<CR>", opts)
-keymap("i", "<C-s>", "<cmd>w<CR>", opts)
-keymap("n", "<Leader>q", "<cmd>q<CR>", opts)
-keymap("n", "<C-q>", "<cmd>wq<CR>", opts)
+set("i", "jk", "<ESC>")
+set("n", "cw", "ciw")
+set("n", "dw", "diw")
 -- like emacs
-keymap("i", "<C-b>", "<Left>", opts)
-keymap("i", "<C-f>", "<Right>", opts)
-keymap("i", "<C-a>", "<Home>", opts)
-keymap("i", "<C-e>", "<End>", opts)
-keymap("c", "<C-a>", "<Home>", opts)
-keymap("c", "<C-e>", "<End>", opts)
-keymap("c", "<C-f>", "<Right>", opts)
-keymap("c", "<C-b>", "<Left>", opts)
-
+set("i", "<C-b>", "<Left>")
+set("i", "<C-f>", "<Right>")
+set("i", "<C-a>", "<Home>")
+set("i", "<C-e>", "<End>")
+set("c", "<C-a>", "<Home>")
+set("c", "<C-e>", "<End>")
+set("c", "<C-f>", "<Right>")
+set("c", "<C-b>", "<Left>")
