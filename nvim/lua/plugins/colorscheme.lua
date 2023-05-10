@@ -1,3 +1,9 @@
+local colorschemes = { "gruvbox", "dracula", "monokai-pro", "zephyr", "onedarkpro", "kanagawa", "catppuccin" }
+local function randomColor()
+	math.randomseed(os.time())
+	return colorschemes[math.random(#colorschemes)]
+end
+
 return {
 	-- gruvbox
 	{ "ellisonleao/gruvbox.nvim", lazy = true },
@@ -20,6 +26,7 @@ return {
 	-- kanagawa
 	{
 		"rebelot/kanagawa.nvim",
+		lazy = true,
 		config = function()
 			require("kanagawa").setup({
 				transparent = true,
@@ -57,10 +64,35 @@ return {
 		-- require("monokai").setup({ palette = require("monokai").ristretto })
 		-- end,
 	},
+
+	-- monokai_pro
 	{
-		"hardhackerlabs/theme-vim",
+		"loctvl842/monokai-pro.nvim",
 		lazy = true,
-		name = "hardhacker",
+		config = function()
+			require("monokai-pro").setup({
+				transparent_background = true,
+				filter = "octagon", -- classic | octagon | pro | machine | ristretto | spectrum
+				background_clear = {
+					-- "float_win",
+					"toggleterm",
+					"telescope",
+					"which-key",
+					"renamer",
+					"neo-tree",
+				},
+				plugins = {
+					bufferline = {
+						underline_selected = false,
+						underline_visible = false,
+					},
+					indent_blankline = {
+						context_highlight = "pro", -- default | pro
+						context_start_underline = true,
+					},
+				},
+			})
+		end,
 	},
 
 	-- Configure LazyVim to load gruvbox
@@ -68,7 +100,8 @@ return {
 		"LazyVim/LazyVim",
 		opts = {
 			-- gruvbox catppuccin dracula kanagawa zephyr onedarkpro monokai
-			colorscheme = "dracula",
+			-- colorscheme = "monokai-pro",
+			colorscheme = randomColor(),
 		},
 	},
 }
