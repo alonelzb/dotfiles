@@ -1,4 +1,4 @@
-local colorschemes = { "gruvbox", "dracula", "monokai-pro", "zephyr", "onedarkpro", "kanagawa", "catppuccin" }
+local colorschemes = { "gruvbox", "dracula", "monokai-pro", "zephyr", "onedark", "kanagawa", "catppuccin" }
 local function randomColor()
 	math.randomseed(os.time())
 	return colorschemes[math.random(#colorschemes)]
@@ -48,6 +48,7 @@ return {
 			require("onedarkpro").setup({
 				options = {
 					transparency = true, -- Use a transparent background?
+					cursorline = true,
 				},
 			})
 		end,
