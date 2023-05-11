@@ -533,5 +533,3 @@ source ~/.zoxide.nu
 source ~/.cache/starship/init.nu
 # source ~/.oh-my-posh.nu
 
-
-# new
