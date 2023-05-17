@@ -1,0 +1,4 @@
+mklink /D ~/AppData\Roaming\nushell ~\.config\dotfiles\nushell\
+mklink /D ~/AppData/Local/nvim/ ~/.config/dotfiles/nvim/
+
+
