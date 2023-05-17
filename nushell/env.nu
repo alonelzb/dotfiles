@@ -29,10 +29,10 @@ let-env PROMPT_MULTILINE_INDICATOR = { "::: " }
 
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # let-env PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
-let-env Path = ($env.Path | split row (char esep) | prepend '~/.fnm')
 
 # fnm config
+let-env Path = ($env.Path | split row (char esep) | prepend '~/.fnm')
 load-env (fnm env --shell bash | lines | str replace 'export ' '' | str replace -a '"' '' | split column = | rename name value | where name != "FNM_ARCH" and name != "PATH" | reduce -f {} {|it, acc| $acc | upsert $it.name $it.value })
 let-env Path = ($env.Path | split row (char esep) | prepend $"($env.FNM_MULTISHELL_PATH)")
 
-zoxide init nushell | save -f ~/.zoxide.nu
+zoxide init --cmd j nushell | save -f ~/.zoxide.nu

@@ -43,7 +43,9 @@ alias - = cd -
 alias ls = lsd
 alias l = lsd -l
 alias la = lsd -la
-alias j = __zoxide_z
 
 source ~/.zoxide.nu
+source ~/.cache/starship/init.nu
+
+
 # fnm env --use-on-cd | source
