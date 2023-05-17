@@ -3,5 +3,5 @@
 -- Add any additional options here
 --
 
-vim.opt.guifont = "Hack Nerd Font:h12"
+-- vim.opt.guifont = "Hack Nerd Font:h12"
 vim.opt.cursorcolumn = true
