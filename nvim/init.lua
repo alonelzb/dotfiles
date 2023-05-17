@@ -17,3 +17,4 @@ vim.cmd([[
 
   hi SignColumn guibg=None
 ]])
+--a
