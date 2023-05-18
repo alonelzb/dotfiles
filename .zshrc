@@ -20,6 +20,17 @@ alias zshrc='nvim ~/.zshrc'
 alias clash='~/.config/clash/clash-linux &'
 alias httpd='http -d'
 alias httpb='http -b'
+# git
+alias g='git'
+
+alias ga='git add'
+alias gaa='git add --all'
+alias gb='git branch'
+alias gba='git branch --all'
+alias gcb='git checkout -b'
+alias gl='git pull'
+alias gm='git merge'
+alias gp='git push'
 
 # 环境变量
 export PATH=/usr/local/python3/bin:$PATH
