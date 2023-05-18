@@ -1,6 +1,5 @@
 -- Use <tab> for completion and snippets (supertab)
 -- first: disable default <tab> and <s-tab> behavior in LuaSnip
-
 local kind_icons = {
     Text = "  ",
     Method = "  ",
@@ -28,7 +27,8 @@ local kind_icons = {
     Operator = "  ",
     TypeParameter = "  ",
 }
-return {
+
+  return {
     {
         "L3MON4D3/LuaSnip",
         event = "InsertEnter",
