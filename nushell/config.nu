@@ -1,5 +1,6 @@
+
 let-env config = {
-  show_banner: false,
+  show_banner: true,
   keybindings:[
     {
       name: completion_menu
@@ -28,9 +29,8 @@ let-env config = {
       event: {send: Enter }
     }
   ]
-
-
 }
+
 
 
 # custom config
@@ -44,8 +44,12 @@ alias ls = lsd
 alias l = lsd -l
 alias la = lsd -la
 
-source ~/.zoxide.nu
-source ~/.cache/starship/init.nu
+def pwd [] {
+    echo ($env.PWD)
+  }
 
+source ~/.zoxide.nu
+# source ~/.cache/starship/init.nu
 
 # fnm env --use-on-cd | source
+
