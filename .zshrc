@@ -1,6 +1,6 @@
 alias ..='cd ..'
 alias h='history'
-alias j='z'
+# alias j='z'
 # lsd
 alias ls='lsd'
 alias ll='lsd -l'
@@ -38,15 +38,13 @@ function proxy_on() {
     export https_proxy=http://127.0.0.1:7890
     echo 'proxy on'
 }
-proxy_on
+#proxy_on
 function proxy_off {
     unset http_proxy
     unset https_proxy
 }
 
 
-eval "$(zoxide init zsh)"
-eval "$(starship init zsh)"
 
 # About zsh config
 export HISTFILE=$HOME/.zsh/.zsh_history
@@ -137,9 +135,13 @@ bindkey '^j' autosuggest-execute
 bindkey '^[;' autosuggest-accept
 
 
+eval "$(zoxide init --cmd j zsh)"
+eval "$(starship init zsh)"
+
 # fnm
 export PATH="/home/zbluo/.local/share/fnm:$PATH"
 eval "`fnm env`"
 
 # fzf
 [ -f ~/.config/fzf/fzf.zsh ] && source ~/.config/fzf/fzf.zsh
+
