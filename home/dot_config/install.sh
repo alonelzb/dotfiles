@@ -1,8 +1,5 @@
-if [[ ! -e $HOME/.config ]]; then
-	ln -s $HOME/dot_config $HOME/.config
-	ln -s $HOME/dot_config/.zshenv $HOME/.zshenv
-fi
-
+#!/bin/bash
+#
 if [ ! -e $HOME/.local ]; then
 	mkdir -p $HOME/.local/bin
 fi
@@ -42,6 +39,9 @@ if [ ! -e $HOME/.vim/autoload/plug.vim ]; then
 fi
 
 curl -fsSL https://fnm.vercel.app/install | sh
+
+# 安装chezmoi 并初始化
+# sh -c "$(curl -fsLS get.chezmoi.io)" -- -b $HOME/.local/bin
 
 pip3 install requests tqdm sh rich
 python3 $HOME/.config/scripts/install.py
