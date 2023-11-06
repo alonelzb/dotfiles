@@ -38,14 +38,16 @@ if [ ! -e $HOME/.vim/autoload/plug.vim ]; then
 		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
+yum install unzip -y
 curl -fsSL https://fnm.vercel.app/install | sh
 
 # 安装chezmoi 并初始化
 # sh -c "$(curl -fsLS get.chezmoi.io)" -- -b $HOME/.local/bin
 
-pip3 install requests tqdm sh rich
-python3 $HOME/.config/scripts/install.py
+if [ $(pip3 list | grep requests -c) -lt 1 ]; then
+	pip3 install requests tqdm sh rich
+fi
 
-#npm i -g neovim
+python3 $HOME/.config/scripts/install.py
 
 echo done
