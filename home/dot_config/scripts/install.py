@@ -53,20 +53,20 @@ def get_download_url(url):
     exit()
 
 
-def unpack_and_move(tar_name, target=""):
+def unpack_and_move(tar_name):
     dirname = tar_name.rstrip(".tar.gz")
     bin_name = tar_name.split("-")[0]
     #
     shutil.unpack_archive(f"/tmp/{tar_name}", f"/tmp/{dirname}")
 
+    bin_dir = Path.home() / ".local" / "bin"
+
     if Path(f"/tmp/{dirname}/{dirname}/").exists():
         if bin_name == "ripgrep":
             bin_name = "rg"
-        shutil.copy2(
-            f"/tmp/{dirname}/{dirname}/{bin_name}", Path.home() / ".local/bin/"
-        )
+        shutil.copy2(f"/tmp/{dirname}/{dirname}/{bin_name}", f"{bin_dir}/{bin_name}")
     else:
-        shutil.copy2(f"/tmp/{dirname}/{bin_name}", Path.home() / ".local/bin/")
+        shutil.copy2(f"/tmp/{dirname}/{bin_name}", f"{bin_dir}/{bin_name}")
     print(f"move {bin_name} --> ~/.local/bin")
 
     shutil.rmtree(f"/tmp/{dirname}")
@@ -86,7 +86,7 @@ def download(task_id, url, filename):
             # if done_event.is_set():
             # return
     progress.console.log(f"Downloaded {path}")
-    unpack_and_move(path)
+    unpack_and_move(filename)
 
 
 if __name__ == "__main__":

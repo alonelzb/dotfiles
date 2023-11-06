@@ -1,5 +1,7 @@
 #!/bin/bash
 #
+
+yum update
 if [ ! -e $HOME/.local ]; then
 	mkdir -p $HOME/.local/bin
 fi
@@ -14,7 +16,7 @@ install_neovim() {
 }
 
 install_zsh() {
-	wge https://www.zsh.org/pub/zsh-5.9.tar.xz -P $HOME/.tmp
+	wget https://www.zsh.org/pub/zsh-5.9.tar.xz -P $HOME/.tmp
 	tar xf $HOME/zsh-5.9.tar.xz -C $HOME/.tmp/
 	cd $HOME/.tmp/zsh-5.9
 	./configure
