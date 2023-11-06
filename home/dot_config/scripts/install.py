@@ -2,12 +2,10 @@
 A rudimentary URL downloader (like wget or curl) to demonstrate Rich progress bars.
 """
 
-import os.path
 import requests
 import re
 import shutil
 from pathlib import Path
-from multiprocessing import Pool
 
 
 from rich.progress import (
@@ -78,8 +76,8 @@ def download(task_id, url, filename):
     response = requests.get(url, headers=headers, stream=True)
 
     progress.update(task_id, total=int(response.headers["content-length"]))
-    path = filename
-    # path = Path.cwd() / filename
+    # path = filename
+    path = f"/tmp/{filename}"
     with open(path, "wb") as fd:
         progress.start_task(task_id)
         for chunk in response.iter_content(chunk_size=1024 * 4):
@@ -88,25 +86,7 @@ def download(task_id, url, filename):
             # if done_event.is_set():
             # return
     progress.console.log(f"Downloaded {path}")
-
-
-def unpack_and_move(tar_name, target=""):
-    dirname = tar_name.rstrip(".tar.gz")
-    bin_name = tar_name.split("-")[0]
-    #
-    shutil.unpack_archive(f"/tmp/{tar_name}", f"/tmp/{dirname}")
-
-    if Path(f"/tmp/{dirname}/{dirname}/").exists():
-        if bin_name == "ripgrep":
-            bin_name = "rg"
-        shutil.copy2(
-            f"/tmp/{dirname}/{dirname}/{bin_name}", Path.home() / ".local/bin/"
-        )
-    else:
-        shutil.copy2(f"/tmp/{dirname}/{bin_name}", Path.home() / ".local/bin/")
-    print(f"move {bin_name} --> ~/.local/bin")
-
-    shutil.rmtree(f"/tmp/{dirname}")
+    unpack_and_move(path)
 
 
 if __name__ == "__main__":
