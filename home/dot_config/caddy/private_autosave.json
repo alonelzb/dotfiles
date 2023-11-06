@@ -1,0 +1,1 @@
+{"apps":{"http":{"servers":{"srv0":{"listen":[":80"],"routes":[{"handle":[{"body":"hello world","handler":"static_response"}]}]}}}}}

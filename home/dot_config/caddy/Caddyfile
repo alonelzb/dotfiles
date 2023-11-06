@@ -1,0 +1,36 @@
+{
+	debug
+	log {
+		output file /var/log/access.log
+		format console {
+			time_format wall
+		}
+	}
+}
+
+:80 {
+	root * /home/zbluo/Documents
+	file_server
+
+	handle_path /resources/* {
+		file_server {
+			root /home/zbluo/Documents/resources
+			browse
+		}
+	}
+
+	handle_path /apis/* {
+		file_server {
+			root /home/zbluo/Documents/apis
+			browse
+		}
+	}
+
+	handle_errors {
+		respond "{err.status_code} {err.status_text}"
+	}
+}
+
+:7000 {
+	respond "{\"name\":\"luozaibo\"}"
+}
