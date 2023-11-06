@@ -1,7 +1,15 @@
 #!/bin/sh
 
+if [ ! -e "/usr/loca/bin/age" ]; then
+    wget https://github.com/FiloSottile/age/releases/download/v1.1.1/age-v1.1.1-linux-amd64.tar.gz -P /tmp
+    tar xf /tmp/age-v1.1.1-linux-amd64.tar.gz -C /tmp/
+    cp /tmp/age/age* /usr/local/bin
+fi
+
+
 if [ ! -f "${HOME}/.config/chezmoi/key.txt" ]; then
     mkdir -p "${HOME}/.config/chezmoi"
     age --decrypt --output "${HOME}/.config/chezmoi/key.txt"  "{{ .chezmoi.sourceDir }}/key.txt.age"
     chmod 600 "${HOME}/.config/chezmoi/key.txt"
 fi
+
