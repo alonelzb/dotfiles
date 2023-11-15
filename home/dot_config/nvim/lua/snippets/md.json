@@ -2,5 +2,14 @@
     "h2 title": {
         "prefix": "h2",
         "body": ["### "]
+    },
+    "MarkDown title": {
+        "prefix": "mdt",
+        "body": [
+            "---",
+            "title: $1",
+            "---"
+        ]
     }
+
 }

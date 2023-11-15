@@ -2,10 +2,12 @@
 A rudimentary URL downloader (like wget or curl) to demonstrate Rich progress bars.
 """
 
+import os.path
 import requests
-import re
+import re, sys
 import shutil
 from pathlib import Path
+from multiprocessing import Pool
 
 
 from rich.progress import (
@@ -59,14 +61,14 @@ def unpack_and_move(tar_name):
     #
     shutil.unpack_archive(f"/tmp/{tar_name}", f"/tmp/{dirname}")
 
-    bin_dir = Path.home() / ".local" / "bin"
-
     if Path(f"/tmp/{dirname}/{dirname}/").exists():
         if bin_name == "ripgrep":
             bin_name = "rg"
-        shutil.copy2(f"/tmp/{dirname}/{dirname}/{bin_name}", f"{bin_dir}/{bin_name}")
+        shutil.copy2(
+            f"/tmp/{dirname}/{dirname}/{bin_name}", Path.home() / ".local/bin/"
+        )
     else:
-        shutil.copy2(f"/tmp/{dirname}/{bin_name}", f"{bin_dir}/{bin_name}")
+        shutil.copy2(f"/tmp/{dirname}/{bin_name}", Path.home() / ".local/bin/")
     print(f"move {bin_name} --> ~/.local/bin")
 
     shutil.rmtree(f"/tmp/{dirname}")
@@ -86,7 +88,6 @@ def download(task_id, url, filename):
             # if done_event.is_set():
             # return
     progress.console.log(f"Downloaded {path}")
-    unpack_and_move(filename)
 
 
 if __name__ == "__main__":
@@ -100,6 +101,15 @@ if __name__ == "__main__":
     rg = "https://api.github.com/repos/BurntSushi/ripgrep/releases/latest"
 
     tools = [lsd, fd, bat, atuin, zoxide, xh, zellij, rg]
+
+    if not sys.argv[1:]:
+        print(tools)
+    for tool in tools:
+        if tool.find(sys.argv[1]):
+            print(tool)
+
+    exit()
+
     urls = []
     for tool in tools:
         urls.append(get_download_url(tool))

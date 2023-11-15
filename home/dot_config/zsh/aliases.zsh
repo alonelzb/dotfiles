@@ -32,6 +32,7 @@ alias py='python3'
 alias python='python3'
 alias pip='pip3'
 alias pytree='python3 ~/.config/scripts/tree.py'
+# alias 'py i'='python3 ~/.config/scripts/install.py'
 # other
 alias projects='cd ~/Documents/projects'
 alias pn='pnpm'

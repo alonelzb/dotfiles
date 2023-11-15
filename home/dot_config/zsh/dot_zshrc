@@ -43,6 +43,9 @@ eval "`fnm env`"
 # golang
 [[ -d $HOME/.local/go ]] && export PATH=$HOME/.local/go/bin:$PATH
 
+# cargo
+[[ -d $HOME/.cargo ]] && export PATH=$HOME/.cargo/bin:$PATH
+
 # nvim
 [[ -d $HOME/.local/nvim-linux64 ]] && export PATH=$HOME/.local/nvim-linux64/bin:$PATH
 
